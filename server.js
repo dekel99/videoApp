@@ -35,5 +35,9 @@ if(process.env.NODE_ENV === 'production'){
 	})
 }
 
-server.listen(5000, () => console.log("server is running on port 5000"))
+let port = process.env.PORT;
+if (!port) {
+  port = 5000;
+}
+server.listen(port, () => console.log(`server is running on port ${port}`))
 
